@@ -64,6 +64,29 @@ wolf-blank/
     └── js/              # empty (no jQuery, no third-party JS)
 ```
 
+## Development & linting
+The theme ships with a full WordPress-compliant linting toolchain.
+
+**PHP — PHPCS with WordPress + WordPress VIP standards** (`.phpcs.xml.dist`):
+```bash
+composer install      # one-time
+composer lint         # check (WordPress, WordPress-VIP-Go, WordPressVIPMinimum, PHPCompatibilityWP)
+composer lint:fix     # auto-fix
+```
+
+**JS / CSS / package.json — `@wordpress/scripts`:**
+```bash
+npm install           # one-time
+npm run lint          # eslint + stylelint + pkg-json
+npm run format        # Prettier (WordPress config)
+npm run build         # compile assets/ (only once block JS/CSS is added)
+npm run start         # watch build
+```
+
+Config files: `.phpcs.xml.dist`, `.eslintrc.js`, `.stylelintrc.json`, `.prettierrc.js`,
+`.editorconfig`, plus matching `*ignore` files. `vendor/`, `node_modules/`, and `build/`
+are gitignored.
+
 ## Plugin dependencies
 **None.** The theme is fully self-contained. The `wolf-store` plugin is optional — when present,
 wire its CPT into the front-page query loop (see `CLAUDE.md`).

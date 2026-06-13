@@ -54,9 +54,36 @@ theme.json lives in this file instead. Keep theme.json pure, valid JSON with no 
 5. Add block styles to theme.json → styles.blocks.
 6. Add custom CSS to global.css only for things blocks can't do.
 
+## Code quality / linting
+Run these before every commit; all must pass clean.
+
+PHP — PHPCS with WordPress + WordPress VIP standards (config: `.phpcs.xml.dist`):
+- `composer install` — one-time setup.
+- `composer lint` — check (PHPCS). `composer lint:fix` — auto-fix (PHPCBF).
+- Standards: `WordPress`, `WordPress-VIP-Go`, `WordPressVIPMinimum`, `PHPCompatibilityWP`
+  (testVersion 8.0-, minimum_wp_version 6.5). Enforced text domain `wolf-blank` and prefix
+  `wolf_blank` / `WolfBlank` / `WOLF_BLANK`. VIP `.JS` sniffs are excluded (JS is linted by ESLint).
+
+JS / CSS / package.json — `@wordpress/scripts` (config: `.eslintrc.js`, `.stylelintrc.json`,
+`.prettierrc.js`):
+- `npm install` — one-time setup.
+- `npm run lint` — js + css + pkg-json. `npm run format` — Prettier.
+- `npm run build` / `npm run start` — only needed once block JS/CSS source is added.
+
+Editor: `.editorconfig` (tabs, LF). Ignore files: `.eslintignore`, `.stylelintignore`,
+`.prettierignore`, `.markdownlint.json`. `vendor/`, `node_modules/`, `build/`, `.phpcs.cache`
+are gitignored.
+
+## Distribution / WP.org compliance files
+- `readme.txt` — WordPress.org theme readme (header, description, FAQ, changelog, copyright).
+  Keep `Stable tag` in sync with `style.css` Version.
+- `LICENSE` — full GPLv2 text.
+- `screenshot.png` — still REQUIRED, not yet added (1200×900).
+
 ## Reuse as boilerplate
-Copy this folder, rename it, update the `style.css` header (Theme Name etc.), and reset
-theme.json tokens back to placeholders.
+Copy this folder, rename it, update the `style.css` header (Theme Name etc.), `readme.txt`,
+`composer.json`/`package.json` name + repository URLs, the prefix/text-domain in
+`.phpcs.xml.dist`, and reset theme.json tokens back to placeholders.
 
 ## Constraints (hard rules)
 - No jQuery, no third-party JS.
@@ -64,3 +91,6 @@ theme.json tokens back to placeholders.
 - No hardcoded colors or font names anywhere except theme.json tokens.
 - No Elementor, ACF, or page-builder assumptions.
 - Must stay an activatable theme that passes Theme Check with zero errors.
+
+## Visual references
+Reference images are in `.claude/images/` — consult before any design decision.

@@ -7,8 +7,15 @@ Thumbs.db
 .idea/
 *.swp
 
-# Node / build (if tooling is added later)
+# Dependencies
 node_modules/
+vendor/
+
+# Build output
+build/
+
+# Linter caches
+.phpcs.cache
 *.log
 
 # WordPress local

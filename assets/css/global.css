@@ -20,12 +20,6 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 
-body {
-	min-height: 100vh;
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-}
-
 img,
 picture,
 video,
@@ -65,20 +59,20 @@ p {
 	text-wrap: pretty;
 }
 
-#root,
-#__next {
-	isolation: isolate;
-}
-
 /* 2. Base ----------------------------------- */
+
 /* Colors/fonts come from theme.json via --wp--preset--* custom props. */
 body {
-	background-color: var(--wp--preset--color--base);
-	color: var(--wp--preset--color--contrast);
+	min-height: 100vh;
 	font-family: var(--wp--preset--font-family--body);
+	line-height: 1.5;
+	color: var(--wp--preset--color--contrast);
+	background-color: var(--wp--preset--color--base);
+	-webkit-font-smoothing: antialiased;
 }
 
 /* 3. Layout utilities ----------------------- */
+
 /* Mirror WP's own layout classes for intentional overrides. */
 .is-full-width,
 .alignfull {
@@ -91,11 +85,6 @@ body {
 }
 
 /* 4. Typography baseline -------------------- */
-:root {
-	--wolf-letter-spacing-tight: -0.02em;
-	--wolf-letter-spacing-wide: 0.04em;
-}
-
 h1,
 h2,
 h3 {
@@ -104,21 +93,30 @@ h3 {
 
 /* 5. Animation baseline --------------------- */
 @media (prefers-reduced-motion: reduce) {
+
 	*,
 	*::before,
 	*::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
 	}
 }
 
-/* 6. DESIGN SLOTS (empty — fill per project) */
+/* 6. DESIGN TOKENS + SLOTS ------------------ */
+
+/* Section 4 tokens are set; section-6 slots are empty, fill per project. */
 :root {
-	--wolf-transition-speed: /* e.g. 0.3s */;
-	--wolf-transition-ease: /* e.g. cubic-bezier(0.4, 0, 0.2, 1) */;
-	--wolf-border-radius: /* e.g. 0 / 4px / 12px */;
-	--wolf-shadow: /* e.g. 0 10px 40px rgba(0,0,0,0.1) */;
-	--wolf-header-height: /* e.g. 80px */;
+
+	/* Typography */
+	--wolf-letter-spacing-tight: -0.02em;
+	--wolf-letter-spacing-wide: 0.04em;
+
+	/* DESIGN SLOTS (empty — fill per project) */
+	--wolf-transition-speed: 0.3s;
+	--wolf-transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+	--wolf-border-radius: 0;
+	--wolf-shadow: none;
+	--wolf-header-height: 80px;
 }
