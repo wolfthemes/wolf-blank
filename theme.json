@@ -38,13 +38,13 @@
 				{
 					"slug": "heading",
 					"name": "Heading",
-					"fontFamily": "inherit",
+					"fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
 					"fontFace": []
 				},
 				{
 					"slug": "body",
 					"name": "Body",
-					"fontFamily": "inherit",
+					"fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
 					"fontFace": []
 				}
 			],

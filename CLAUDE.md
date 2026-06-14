@@ -29,20 +29,20 @@ theme.json lives in this file instead. Keep theme.json pure, valid JSON with no 
 - `index.php` — required fallback, "silence is golden".
 - `assets/css/global.css` — reset + utilities + design-slot custom props. No colors/fonts.
 - `assets/js/` — empty (.gitkeep). No jQuery, no third-party JS.
-- `templates/front-page.html` — hero + themes grid + stats + CTA band.
+- `templates/front-page.html` — hero + content grid (query loop).
 - `templates/index.html` — blog listing (query loop + pagination).
 - `templates/single.html` — single post + comments.
 - `templates/page.html` — static page.
 - `templates/404.html` — centered not-found.
 - `parts/header.html` — logo + nav + CTA button.
-- `parts/footer.html` — 3-col (brand / nav / newsletter) + bottom bar.
+- `parts/footer.html` — minimal: centered copyright line only.
 - `screenshot.png` — NOT created. Add a 1200×900 PNG before shipping.
 
 ## Design token locations
 - Colors: `theme.json` → `settings.color.palette` (8 slots: primary, primary-light, secondary,
   accent, base, base-2, contrast, contrast-2). Defaults are placeholders (black/white).
-- Typography: `theme.json` → `settings.typography` (heading + body families are `inherit`;
-  fill `fontFace` to load real fonts. Fluid scale xs→3xl).
+- Typography: `theme.json` → `settings.typography` (heading + body families default to a
+  system sans-serif stack; fill `fontFace` + swap `fontFamily` to load real fonts. Fluid scale xs→3xl).
 - Spacing: `theme.json` → `settings.spacing.spacingSizes` (1–10, base-4 rem scale).
 - Global CSS vars: `assets/css/global.css` section 6. The `--wolf-*` contract slots
   (radius, border, button, shadow, transition) are aliased from a child theme's
