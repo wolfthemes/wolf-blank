@@ -98,8 +98,5 @@ Copy this folder, rename it, update the `style.css` header (Theme Name etc.), `r
 - No Elementor, ACF, or page-builder assumptions.
 - Must stay an activatable theme that passes Theme Check with zero errors.
 
-## Visual references
-Reference images are in `.claude/images/` — consult before any design decision.
-
 Git remote: git@github.com:wolfthemes/wolf-blank.git — this repo only.
 
