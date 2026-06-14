@@ -36,7 +36,7 @@ theme.json lives in this file instead. Keep theme.json pure, valid JSON with no 
 - `templates/404.html` — centered not-found.
 - `parts/header.html` — logo + nav + CTA button.
 - `parts/footer.html` — minimal: centered copyright line only.
-- `screenshot.png` — NOT created. Add a 1200×900 PNG before shipping.
+- `screenshot.png` — 1200×900 PNG preview of the default render.
 
 ## Design token locations
 - Colors: `theme.json` → `settings.color.palette` (8 slots: primary, primary-light, secondary,
@@ -84,7 +84,7 @@ are gitignored.
 - `readme.txt` — WordPress.org theme readme (header, description, FAQ, changelog, copyright).
   Keep `Stable tag` in sync with `style.css` Version.
 - `LICENSE` — full GPLv2 text.
-- `screenshot.png` — still REQUIRED, not yet added (1200×900).
+- `screenshot.png` — 1200×900 preview of the default render.
 
 ## Reuse as boilerplate
 Copy this folder, rename it, update the `style.css` header (Theme Name etc.), `readme.txt`,
