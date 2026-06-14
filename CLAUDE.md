@@ -100,3 +100,6 @@ Copy this folder, rename it, update the `style.css` header (Theme Name etc.), `r
 
 ## Visual references
 Reference images are in `.claude/images/` — consult before any design decision.
+
+Git remote: git@github.com:wolfthemes/wolf-blank.git — this repo only.
+
