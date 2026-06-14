@@ -44,11 +44,17 @@ theme.json lives in this file instead. Keep theme.json pure, valid JSON with no 
 - Typography: `theme.json` → `settings.typography` (heading + body families are `inherit`;
   fill `fontFace` to load real fonts. Fluid scale xs→3xl).
 - Spacing: `theme.json` → `settings.spacing.spacingSizes` (1–10, base-4 rem scale).
-- Global CSS vars: `assets/css/global.css` section 6 (transition, radius, shadow, header height).
+- Global CSS vars: `assets/css/global.css` section 6. The `--wolf-*` contract slots
+  (radius, border, button, shadow, transition) are aliased from a child theme's
+  `theme.json` → `settings.custom.wolf` (WP emits these as `--wp--custom--wolf--*`).
+  Aliases are `body`-scoped (where WP puts `--wp--custom--*`) and each has a standalone
+  fallback, so wolf-blank still works with no child. A child sets values in theme.json,
+  not by editing global.css. Adding/renaming a slot here affects every child theme.
 
 ## How to redesign this theme
 1. Update theme.json tokens (colors, fonts, spacing scale).
-2. Fill global.css section 6 design slots.
+2. Set the `--wolf-*` contract values in theme.json `settings.custom.wolf` (child or here);
+   only edit global.css section 6 to add a brand-new slot or change a fallback.
 3. Update parts/header.html and parts/footer.html.
 4. Build templates/ one by one, front-page.html first.
 5. Add block styles to theme.json → styles.blocks.
