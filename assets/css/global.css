@@ -145,3 +145,14 @@ body {
 	/* Layout */
 	--wolf-header-height: 80px;
 }
+
+/* Button baseline — uses btn contract tokens defined above. */
+.wp-element-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position:relative;
+	padding: var(--wolf-btn-padding-y) var(--wolf-btn-padding-x);
+	border-radius: var(--wolf-btn-radius);
+	font-weight: var(--wolf-btn-font-weight);
+}
