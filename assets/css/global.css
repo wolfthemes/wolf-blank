@@ -156,3 +156,9 @@ body {
 	border-radius: var(--wolf-btn-radius);
 	font-weight: var(--wolf-btn-font-weight);
 }
+
+.wp-element-button.is-style-outline  {
+    background: transparent;
+    border: var(--wolf-border-width) solid currentColor;
+	color: currentColor;
+}
