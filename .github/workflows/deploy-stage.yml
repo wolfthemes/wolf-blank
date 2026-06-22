@@ -1,9 +1,9 @@
-name: Deploy wolf-blank
+name: Deploy wolf-blank (stage)
 
 on:
   push:
     branches:
-      - master
+      - stage
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/customer/www/wolfthemes.com/public_html/wp-content/themes/wolf-blank
+            cd /home/customer/www/staging20.wolfthemes.com/public_html/wp-content/themes/wolf-blank
             git fetch origin ${{ github.ref_name }}
             git checkout ${{ github.ref_name }}
             git pull --ff-only origin ${{ github.ref_name }}
