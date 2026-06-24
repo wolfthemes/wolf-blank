@@ -99,6 +99,7 @@ body {
 	--wolf-btn-padding-x: var(--wp--custom--wolf--btn-padding-x, 1.5rem);
 	--wolf-btn-padding-y: var(--wp--custom--wolf--btn-padding-y, 0.75rem);
 	--wolf-btn-font-weight: var(--wp--custom--wolf--btn-font-weight, 600);
+	--wolf-btn-letter-spacing: 0;
 
 	/* Effects + motion */
 	--wolf-shadow: var(--wp--custom--wolf--shadow-card, none);
